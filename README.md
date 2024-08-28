@@ -12,6 +12,7 @@ The configuration is defined in the `renovate.json` file and includes the follow
 - **assignees**: PRs are automatically assigned to `pplancq`.
 - **prConcurrentLimit**: Limit of 10 concurrent PRs.
 - **prHourlyLimit**: Limit of 10 PRs per hour.
+- **vulnerabilityAlerts**: enabled.
 - **packageRules**:
   - Grouping Babel packages under "babel packages".
   - Grouping React Query packages under "react-query packages".

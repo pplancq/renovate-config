@@ -5,6 +5,9 @@
   "assignees": ["pplancq"],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 10,
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "packagePatterns": ["^@babel/"],
