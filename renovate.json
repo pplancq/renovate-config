@@ -1,3 +1,26 @@
 {
-  "extends": ["config:base"]
+  "extends": ["config:base"],
+  "schedule": ["every monday between 00:00 and 06:00"],
+  "labels": ["dependencies"],
+  "assignees": ["pplancq"],
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 10,
+  "packageRules": [
+    {
+      "packagePatterns": ["^@babel/"],
+      "groupName": "babel packages"
+    },
+    {
+      "packagePatterns": ["^@tanstack/react-query"],
+      "groupName": "react-query packages"
+    },
+    {
+      "packagePatterns": ["^@typescript-eslint/"],
+      "groupName": "typescript-eslint packages"
+    },
+    {
+      "updateTypes": ["major"],
+      "labels": ["High"]
+    }
+  ]
 }
