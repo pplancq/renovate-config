@@ -23,7 +23,7 @@
     },
     {
       "updateTypes": ["major"],
-      "labels": ["High"]
+      "labels": ["dependencies", "High"]
     }
   ]
 }
