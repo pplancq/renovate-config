@@ -77,6 +77,8 @@ jobs:
         run: |
           for file in *.json*
           do
-            echo "[CI] Let's validate $file"
-            RENOVATE_CONFIG_FILE=${file} npm run validate
+            if [[ "$file" != "package.json" && "$file" != "package-lock.json" ]]; then
+              echo "[CI] Let's validate $file"
+              RENOVATE_CONFIG_FILE=${file} npm run validate
+            fi
           done
