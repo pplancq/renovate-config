@@ -13,7 +13,7 @@ The configuration is defined in the `default.json` file and includes the followi
 - **assignees**: PRs are automatically assigned to `pplancq`.
 - **prConcurrentLimit**: Limit of 10 concurrent PRs.
 - **prHourlyLimit**: Limit of 10 PRs per hour.
-- **vulnerabilityAlerts**: enabled.
+- **vulnerabilityAlerts**: enabled and add labels "security".
 - **npm**: range strategy bump.
 - **packageRules**:
   - Grouping Babel packages under "babel packages".

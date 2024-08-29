@@ -3,15 +3,13 @@
   "extends": [
     "config:recommended",
     ":timezone(Europe/Paris)",
-    "github>pplancq/renovate-config:schedule"
+    "github>pplancq/renovate-config:schedule",
+    "github>pplancq/renovate-config:vulnerabilityAlerts"
   ],
   "labels": ["dependencies"],
   "assignees": ["pplancq"],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 10,
-  "vulnerabilityAlerts": {
-    "enabled": true
-  },
   "npm": {
     "rangeStrategy": "bump"
   },
