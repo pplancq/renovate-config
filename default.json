@@ -12,6 +12,9 @@
   "vulnerabilityAlerts": {
     "enabled": true
   },
+  "npm": {
+    "rangeStrategy": "bump"
+  },
   "packageRules": [
     {
       "groupName": "babel packages",
