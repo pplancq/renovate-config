@@ -31,7 +31,7 @@ To use this configuration in your project, add the `renovate-config` repository 
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github:pplancq/renovate-config"]
+  "extends": ["github>pplancq/renovate-config"]
 }
 ```
 
