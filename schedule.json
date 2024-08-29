@@ -4,6 +4,6 @@
     ":timezone(Europe/Paris)"
   ],
   "schedule": [
-    "after 00:00 before 06:00 every monday"
+    "after 00:00 before 06:00 on monday"
   ]
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":timezone(Europe/Paris)",
     "github>pplancq/renovate-config:schedule"
   ],
@@ -14,19 +14,19 @@
   },
   "packageRules": [
     {
-      "packagePatterns": ["^@babel/"],
-      "groupName": "babel packages"
+      "groupName": "babel packages",
+      "matchPackageNames": ["/^@babel//"]
     },
     {
-      "packagePatterns": ["^@tanstack/react-query"],
-      "groupName": "react-query packages"
+      "groupName": "react-query packages",
+      "matchPackageNames": ["/^@tanstack/react-query/"]
     },
     {
-      "packagePatterns": ["^@typescript-eslint/"],
-      "groupName": "typescript-eslint packages"
+      "groupName": "typescript-eslint packages",
+      "matchPackageNames": ["/^@typescript-eslint//"]
     },
     {
-      "updateTypes": ["major"],
+      "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "High"]
     }
   ]
