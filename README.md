@@ -21,6 +21,7 @@ The configuration is defined in the `default.json` file and includes the followi
   - Grouping Babel packages under "babel packages".
   - Grouping React Query packages under "react-query packages".
   - Grouping TypeScript ESLint packages under "typescript-eslint packages".
+  - Grouping Semantic-release packages under "semantic-release packages".
   - Major updates are labeled with "High".
 
 ## Usage

@@ -25,6 +25,13 @@
       "matchPackageNames": ["/^@typescript-eslint//"]
     },
     {
+      "groupName": "semantic-release packages",
+      "matchPackageNames": [
+        "semantic-release",
+        "@pplancq/semantic-release-config"
+      ]
+    },
+    {
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "High"]
     }
