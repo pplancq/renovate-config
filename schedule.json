@@ -1,9 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    ":timezone(Europe/Paris)"
-  ],
-  "schedule": [
-    "after 00:00 before 06:00 on monday"
-  ]
+  "extends": [":timezone(Europe/Paris)"],
+  "schedule": ["after 00:00 before 06:00 on monday"]
 }

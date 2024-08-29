@@ -1,0 +1,25 @@
+{
+  "name": "@pplancq/renovate-config",
+  "version": "1.0.0",
+  "description": "This repository contains the Renovate configuration",
+  "main": "default.json",
+  "scripts": {
+    "lint": "prettier \"**/*\" --check --ignore-unknown",
+    "lint:fix": "prettier \"**/*\" --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pplancq/renovate-config.git"
+  },
+  "author": "pplancq <paul.plancq@outlook.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pplancq/renovate-config/issues"
+  },
+  "homepage": "https://github.com/pplancq/renovate-config#readme",
+  "devDependencies": {
+    "@pplancq/prettier-config": "^1.2.0",
+    "prettier": "^3.3.3"
+  },
+  "prettier": "@pplancq/prettier-config"
+}
