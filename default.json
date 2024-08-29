@@ -7,6 +7,7 @@
     "github>pplancq/renovate-config:vulnerabilityAlerts",
     "github>pplancq/renovate-config:npm"
   ],
+  "dependencyDashboard": false,
   "labels": ["dependencies"],
   "assignees": ["pplancq"],
   "prConcurrentLimit": 10,
