@@ -14,7 +14,9 @@ The configuration is defined in the `default.json` file and includes the followi
 - **prConcurrentLimit**: Limit of 10 concurrent PRs.
 - **prHourlyLimit**: Limit of 10 PRs per hour.
 - **vulnerabilityAlerts**: enabled and add labels "security".
-- **npm**: range strategy bump.
+- **npm**: 
+  - range strategy bump.
+  - minimum release age 3 days.
 - **packageRules**:
   - Grouping Babel packages under "babel packages".
   - Grouping React Query packages under "react-query packages".

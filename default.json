@@ -4,15 +4,13 @@
     "config:recommended",
     ":timezone(Europe/Paris)",
     "github>pplancq/renovate-config:schedule",
-    "github>pplancq/renovate-config:vulnerabilityAlerts"
+    "github>pplancq/renovate-config:vulnerabilityAlerts",
+    "github>pplancq/renovate-config:npm"
   ],
   "labels": ["dependencies"],
   "assignees": ["pplancq"],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 10,
-  "npm": {
-    "rangeStrategy": "bump"
-  },
   "packageRules": [
     {
       "groupName": "babel packages",

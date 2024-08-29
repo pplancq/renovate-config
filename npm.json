@@ -1,0 +1,7 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "npm": {
+    "rangeStrategy": "bump",
+    "minimumReleaseAge": "3 days"
+  }
+}
