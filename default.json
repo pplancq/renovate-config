@@ -1,7 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "schedule": ["every monday between 00:00 and 06:00"],
+  "extends": [
+    "config:base",
+    ":timezone(Europe/Paris)",
+    "github>pplancq/renovate-config:schedule"
+  ],
   "labels": ["dependencies"],
   "assignees": ["pplancq"],
   "prConcurrentLimit": 10,
