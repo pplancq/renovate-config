@@ -1,5 +1,8 @@
 # Renovate Config
 
+[![Validate renovate config](https://github.com/pplancq/renovate-config/actions/workflows/validate-config.yml/badge.svg)](https://github.com/pplancq/renovate-config/actions/workflows/validate-config.yml)
+[![GitHub License](https://img.shields.io/github/license/pplancq/renovate-config)](https://github.com/pplancq/renovate-config?tab=MIT-1-ov-file#readme)
+
 This repository contains the Renovate configuration used to manage dependency updates in our projects.
 
 ## Configuration
@@ -17,6 +20,7 @@ The configuration is defined in the `default.json` file and includes the followi
 - **npm**:
   - range strategy bump.
   - minimum release age 3 days.
+- **node**: no update engines on package.json.
 - **packageRules**:
   - Grouping Babel packages under "babel packages".
   - Grouping React Query packages under "react-query packages".
