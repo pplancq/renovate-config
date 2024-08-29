@@ -5,7 +5,8 @@
   "main": "default.json",
   "scripts": {
     "lint": "prettier \"**/*\" --check --ignore-unknown",
-    "lint:fix": "prettier \"**/*\" --write --ignore-unknown"
+    "lint:fix": "prettier \"**/*\" --write --ignore-unknown",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,12 @@
   "homepage": "https://github.com/pplancq/renovate-config#readme",
   "devDependencies": {
     "@pplancq/prettier-config": "^1.2.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
     "prettier": "^3.3.3"
   },
-  "prettier": "@pplancq/prettier-config"
+  "prettier": "@pplancq/prettier-config",
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  }
 }
