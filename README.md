@@ -4,9 +4,10 @@ This repository contains the Renovate configuration used to manage dependency up
 
 ## Configuration
 
-The configuration is defined in the `renovate.json` file and includes the following elements:
+The configuration is defined in the `default.json` file and includes the following elements:
 
-- **extends**: Uses Renovate's base configuration.
+- **extends**: Uses Renovate's recommended configuration.
+- **timezone**: Europe/Paris.
 - **schedule**: Updates are scheduled every Monday between midnight and 6 AM.
 - **labels**: PRs are labeled with "dependencies".
 - **assignees**: PRs are automatically assigned to `pplancq`.
@@ -25,7 +26,8 @@ To use this configuration in your project, add the `renovate-config` repository 
 
 ```json
 {
-  "extends": ["github:<your-username>/<your-repo>"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github:pplancq/renovate-config"]
 }
 ```
 
