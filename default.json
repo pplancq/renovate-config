@@ -13,6 +13,11 @@
   "prHourlyLimit": 10,
   "packageRules": [
     {
+      "packageNames": ["node"],
+      "matchDepTypes": ["engines"],
+      "enabled": false
+    },
+    {
       "groupName": "babel packages",
       "matchPackageNames": ["/^@babel//"]
     },
