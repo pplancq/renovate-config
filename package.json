@@ -19,12 +19,19 @@
   },
   "homepage": "https://github.com/pplancq/renovate-config#readme",
   "devDependencies": {
+    "@commitlint/cli": "^19.4.1",
+    "@pplancq/commitlint-config": "^2.2.0",
     "@pplancq/prettier-config": "^1.2.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3"
   },
   "prettier": "@pplancq/prettier-config",
+  "commitlint": {
+    "extends": [
+      "@pplancq/commitlint-config"
+    ]
+  },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"
   }
