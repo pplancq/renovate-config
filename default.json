@@ -14,7 +14,7 @@
   "prHourlyLimit": 10,
   "packageRules": [
     {
-      "packageNames": ["node"],
+      "matchPackageNames": ["node"],
       "matchDepTypes": ["engines"],
       "enabled": false
     },
@@ -32,7 +32,7 @@
     },
     {
       "groupName": "semantic-release packages",
-      "matchPackageNames": ["semantic-release", "@pplancq/semantic-release-config"]
+      "matchPackageNames": ["/^semantic-release$/", "/^@pplancq/semantic-release-config$/"]
     },
     {
       "matchUpdateTypes": ["major"],
