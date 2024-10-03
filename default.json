@@ -19,6 +19,11 @@
       "enabled": false
     },
     {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": "peerDependencies",
+      "enabled": false
+    },
+    {
       "groupName": "babel packages",
       "matchPackageNames": ["/^@babel//"]
     },

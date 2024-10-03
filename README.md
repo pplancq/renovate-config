@@ -20,7 +20,9 @@ The configuration is defined in the `default.json` file and includes the followi
 - **npm**:
   - range strategy bump.
   - minimum release age 3 days.
-- **node**: no update engines on package.json.
+- **node**:
+  - no update engines on package.json.
+  - no update peerDependencies on package.json.
 - **packageRules**:
   - Grouping Babel packages under "babel packages".
   - Grouping React Query packages under "react-query packages".
