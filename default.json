@@ -41,7 +41,7 @@
     },
     {
       "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "High"]
+      "addLabels": ["High"]
     }
   ]
 }
