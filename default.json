@@ -3,8 +3,8 @@
   "extends": [
     "config:recommended",
     ":timezone(Europe/Paris)",
+    ":enableVulnerabilityAlertsWithLabel(security)",
     "github>pplancq/renovate-config:schedule",
-    "github>pplancq/renovate-config:vulnerabilityAlerts",
     "github>pplancq/renovate-config:npm"
   ],
   "dependencyDashboard": false,
