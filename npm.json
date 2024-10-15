@@ -3,5 +3,37 @@
   "npm": {
     "rangeStrategy": "bump",
     "minimumReleaseAge": "3 days"
-  }
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["node"],
+      "matchDepTypes": ["engines"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": "peerDependencies",
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "babel mono repo",
+      "matchPackageNames": ["/^@babel//"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "react-query mono repo",
+      "matchSourceUrls": ["https://github.com/TanStack/query"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "typescript-eslint mono repo",
+      "matchPackageNames": ["/^@typescript-eslint//"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "semantic-release mono repo",
+      "matchPackageNames": ["/^semantic-release$/", "/^@pplancq/semantic-release-config$/"]
+    }
+  ]
 }
