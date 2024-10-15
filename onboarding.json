@@ -1,0 +1,9 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "onboarding": true,
+  "onboardingConfigFileName": ".github/renovate.json",
+  "onboardingConfig": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["github>pplancq/renovate-config"]
+  }
+}

@@ -5,7 +5,8 @@
     ":timezone(Europe/Paris)",
     ":enableVulnerabilityAlertsWithLabel(security)",
     "github>pplancq/renovate-config:schedule",
-    "github>pplancq/renovate-config:npm"
+    "github>pplancq/renovate-config:npm",
+    "github>pplancq/renovate-config:onboarding"
   ],
   "dependencyDashboard": false,
   "labels": ["dependencies"],
