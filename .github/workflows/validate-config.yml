@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: ./.github/actions/setup-node
+        uses: pplancq/actions/setup-node@main
 
       - name: Check package-lock.json
         run: npm run package:check
@@ -39,7 +39,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: ./.github/actions/setup-node
+        uses: pplancq/actions/setup-node@main
 
       # https://commitlint.js.org/guides/ci-setup.html#github-actions
       - name: Validate PR commits with commitlint
@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: ./.github/actions/setup-node
+        uses: pplancq/actions/setup-node@main
 
       - name: Run lint
         run: npm run lint
@@ -71,7 +71,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: ./.github/actions/setup-node
+        uses: pplancq/actions/setup-node@main
 
       - name: Validate renovate config
         run: |
