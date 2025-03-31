@@ -29,6 +29,7 @@ The configuration is defined in the `default.json` file and includes the followi
   - Grouping TypeScript ESLint packages under "typescript-eslint packages".
   - Grouping Semantic-release packages under "semantic-release packages".
   - Major updates are labeled with "High".
+  - Pinning GitHub Action Digests.
 
 ## Usage
 
