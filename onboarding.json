@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboarding": true,
   "onboardingConfigFileName": ".github/renovate.json",
+  "onboardingCommitMessage": "chore: configure renovate",
   "onboardingConfig": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["github>pplancq/renovate-config"]
