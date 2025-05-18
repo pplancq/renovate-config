@@ -24,7 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@pplancq/commitlint-config": "^2.2.2",
-    "@pplancq/prettier-config": "^1.2.4",
+    "@pplancq/prettier-config": "^1.2.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
     "prettier": "^3.5.3"
