@@ -41,7 +41,7 @@
     "!(package|package-lock)*.json": "npm run validate"
   },
   "volta": {
-    "node": "22.15.0",
+    "node": "22.15.1",
     "npm": "11.4.0"
   }
 }
