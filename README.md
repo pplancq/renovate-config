@@ -7,33 +7,49 @@ This repository contains the Renovate configuration used to manage dependency up
 
 ## Configuration
 
-The configuration is defined in the `default.json` file and includes the following elements:
+The main configuration is defined in `default.json` and includes:
 
-- **extends**: Uses Renovate's recommended configuration.
+- **extends**: Uses Renovate's recommended config.
 - **timezone**: Europe/Paris.
-- **schedule**: Updates are scheduled every Monday between midnight and 6 AM.
 - **labels**: PRs are labeled with "dependencies".
 - **assignees**: PRs are automatically assigned to `pplancq`.
-- **prConcurrentLimit**: Limit of 10 concurrent PRs.
-- **prHourlyLimit**: Limit of 10 PRs per hour.
-- **vulnerabilityAlerts**: enabled and add labels "security".
+- **prConcurrentLimit**: Limit of 2 concurrent PRs.
+- **prHourlyLimit**: Limit of 2 PRs per hour.
+- **vulnerabilityAlerts**: enabled and adds the "security" label.
 - **npm**:
-  - range strategy bump.
-  - minimum release age 3 days.
+  - versioning strategy "bump".
+  - minimum release age: 3 days.
 - **node**:
-  - no update engines on package.json.
-  - no update peerDependencies on package.json.
+  - no update of engines in package.json.
+  - no update of peerDependencies in package.json.
 - **packageRules**:
-  - Grouping Babel packages under "babel packages".
-  - Grouping React Query packages under "react-query packages".
-  - Grouping TypeScript ESLint packages under "typescript-eslint packages".
-  - Grouping Semantic-release packages under "semantic-release packages".
-  - Major updates are labeled with "High".
-  - Pinning GitHub Action Digests.
+  - Major updates are labeled "High".
+
+> **Note:**  
+> The default configuration **does not set any schedule**.  
+> If you want to schedule updates (e.g., only on Monday morning), use the dedicated `schedule` config.
+
+### Using the schedule config
+
+To apply a schedule for updates, add the following extension to your configuration:
+
+```json
+{
+  "extends": ["github>pplancq/renovate-config", "github>pplancq/renovate-config:schedule"]
+}
+```
+
+The `schedule` config applies the following window: `after 00:00 before 16:00 on monday` (Europe/Paris timezone).
+
+> **Note:**  
+> The `schedule` config does **not** limit the number of PRs:
+>
+> - `prConcurrentLimit: 0` (no limit on concurrent PRs)
+> - `prHourlyLimit: 0` (no limit on PRs per hour)
 
 ## Usage
 
-To use this configuration in your project, add the `renovate-config` repository as a configuration source in your `renovate.json` file:
+To use this configuration in your project, add the `renovate-config` repository as a config source in your `renovate.json` file:
 
 ```json
 {

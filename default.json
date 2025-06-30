@@ -4,7 +4,6 @@
     "config:recommended",
     ":timezone(Europe/Paris)",
     ":enableVulnerabilityAlertsWithLabel(security)",
-    "github>pplancq/renovate-config:schedule",
     "github>pplancq/renovate-config:npm",
     "github>pplancq/renovate-config:onboarding",
     "github>pplancq/renovate-config:github-action"
@@ -12,8 +11,8 @@
   "dependencyDashboard": false,
   "labels": ["dependencies"],
   "assignees": ["pplancq"],
-  "prConcurrentLimit": 10,
-  "prHourlyLimit": 10,
+  "prConcurrentLimit": 2,
+  "prHourlyLimit": 2,
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
