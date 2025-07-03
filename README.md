@@ -12,7 +12,6 @@ The main configuration is defined in `default.json` and includes:
 - **extends**: Uses Renovate's recommended config.
 - **timezone**: Europe/Paris.
 - **labels**: PRs are labeled with "dependencies".
-- **assignees**: PRs are automatically assigned to `pplancq`.
 - **prConcurrentLimit**: Limit of 2 concurrent PRs.
 - **prHourlyLimit**: Limit of 2 PRs per hour.
 - **vulnerabilityAlerts**: enabled and adds the "security" label.

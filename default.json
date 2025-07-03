@@ -10,7 +10,6 @@
   ],
   "dependencyDashboard": false,
   "labels": ["dependencies"],
-  "assignees": ["pplancq"],
   "prConcurrentLimit": 2,
   "prHourlyLimit": 2,
   "packageRules": [
