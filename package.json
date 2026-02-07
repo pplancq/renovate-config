@@ -11,7 +11,7 @@
     "package:check": "npm exec --yes package-lock-utd@1.1.3",
     "prepare": "husky"
   },
-  "packageManager": "npm@11.8.0",
+  "packageManager": "npm@11.9.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pplancq/renovate-config.git"
