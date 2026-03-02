@@ -16,8 +16,10 @@ The main configuration is defined in `default.json` and includes:
 - **prHourlyLimit**: Limit of 2 PRs per hour.
 - **vulnerabilityAlerts**: enabled and adds the "security" label.
 - **npm**:
+- **npm**:
   - versioning strategy "bump".
   - minimum release age: 3 days.
+  - regex manager: includes a regex manager that updates the `npm` version inside `mise.toml` (it looks for lines like `npm = "x.y.z"`). This allows Renovate to bump the npm version declared in that TOML-based config file.
 - **node**:
   - no update of engines in package.json.
   - no update of peerDependencies in package.json.
