@@ -22,6 +22,11 @@
     },
     {
       "matchDatasources": ["npm"],
+      "matchPackageNames": ["npm"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "matchDatasources": ["npm"],
       "matchDepTypes": "peerDependencies",
       "enabled": false
     },
