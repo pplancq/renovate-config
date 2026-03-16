@@ -7,7 +7,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^mise\\.toml$/"],
+      "managerFilePatterns": ["/(^|\\/)mise\\.toml$/"],
       "matchStrings": ["npm\\s*=\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "npm",
       "depNameTemplate": "npm",
