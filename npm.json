@@ -49,6 +49,11 @@
       "matchDatasources": ["npm"],
       "groupName": "semantic-release mono repo",
       "matchPackageNames": ["/^semantic-release$/", "/^@pplancq/semantic-release-config$/"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "shelter-ui mono repo",
+      "matchSourceUrls": ["https://github.com/pplancq/shelter-ui"]
     }
   ]
 }
