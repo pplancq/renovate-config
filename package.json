@@ -27,7 +27,7 @@
     "@pplancq/commitlint-config": "^4.0.1",
     "@pplancq/prettier-config": "^3.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.5",
+    "lint-staged": "^17.0.6",
     "prettier": "^3.8.3"
   },
   "prettier": "@pplancq/prettier-config",
