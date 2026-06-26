@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/pplancq/renovate-config#readme",
   "devDependencies": {
-    "@commitlint/cli": "^21.0.2",
+    "@commitlint/cli": "^21.1.0",
     "@pplancq/commitlint-config": "^4.0.2",
     "@pplancq/prettier-config": "^3.0.0",
     "husky": "^9.1.7",
