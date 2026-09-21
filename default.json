@@ -6,7 +6,8 @@
     ":enableVulnerabilityAlertsWithLabel(security)",
     "github>pplancq/renovate-config:npm",
     "github>pplancq/renovate-config:onboarding",
-    "github>pplancq/renovate-config:github-action"
+    "github>pplancq/renovate-config:github-action",
+    "github>pplancq/renovate-config:terraform"
   ],
   "dependencyDashboard": false,
   "labels": ["dependencies"],

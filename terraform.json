@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "terraform": {
+    "rangeStrategy": "bump"
+  },
+  "pre-commit": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "groupName": "Terraform providers"
+    },
+    {
+      "matchManagers": ["terraform-version"],
+      "groupName": "Terraform version"
+    },
+    {
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit hooks"
+    }
+  ]
+}
