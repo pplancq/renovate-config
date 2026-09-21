@@ -64,10 +64,7 @@ To use only the Terraform preset, add the following extension to your configurat
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>pplancq/renovate-config",
-    "github>pplancq/renovate-config:terraform"
-  ]
+  "extends": ["github>pplancq/renovate-config", "github>pplancq/renovate-config:terraform"]
 }
 ```
 
