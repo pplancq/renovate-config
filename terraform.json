@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "terraform": {
+    "rangeStrategy": "bump"
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "groupName": "Terraform providers"
+    },
+    {
+      "matchManagers": ["terraform-version"],
+      "groupName": "Terraform version"
+    }
+  ]
+}

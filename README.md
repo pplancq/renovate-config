@@ -21,6 +21,10 @@ The main configuration is defined in `default.json` and includes:
 - **node**:
   - no update of engines in package.json.
   - no update of peerDependencies in package.json.
+- **terraform**:
+  - versioning strategy "bump".
+  - providers and modules are grouped by provider in dedicated PRs.
+  - Terraform core version updates are grouped in a single PR.
 - **packageRules**:
   - Major updates are labeled "High".
 
@@ -45,6 +49,31 @@ The `schedule` config applies the following window: `after 00:00 before 16:00 on
 >
 > - `prConcurrentLimit: 0` (no limit on concurrent PRs)
 > - `prHourlyLimit: 0` (no limit on PRs per hour)
+
+### Terraform config
+
+The `terraform` preset enables and configures Renovate managers for Terraform and pre-commit repositories:
+
+- **terraform**: providers and modules declared in `.tf` / `.tfvars` files.
+- **terraform-version**: Terraform core version (`.terraform-version`, `required_version` block, etc.).
+- **github-actions**: already handled by the `github-action` preset; actions used in Terraform workflows (e.g. `hashicorp/setup-terraform`, `terraform-linters/setup-tflint`) are pinned by SHA.
+- **pre-commit**: hooks declared in `.pre-commit-config.yaml`.
+
+To use only the Terraform preset, add the following extension to your configuration:
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>pplancq/renovate-config",
+    "github>pplancq/renovate-config:terraform"
+  ]
+}
+```
+
+> **Note:**
+> The `github-action` preset pins GitHub Actions by digest (`pinDigests: true`).
+> Terraform-related actions such as `hashicorp/setup-terraform` or `terraform-linters/setup-tflint` will be pinned to a SHA automatically.
 
 ## Usage
 
