@@ -3,6 +3,9 @@
   "terraform": {
     "rangeStrategy": "bump"
   },
+  "pre-commit": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "matchManagers": ["terraform"],
@@ -11,6 +14,10 @@
     {
       "matchManagers": ["terraform-version"],
       "groupName": "Terraform version"
+    },
+    {
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit hooks"
     }
   ]
 }
