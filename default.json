@@ -3,20 +3,41 @@
   "extends": [
     "config:recommended",
     ":timezone(Europe/Paris)",
-    ":enableVulnerabilityAlertsWithLabel(security)",
+    "github>pplancq/renovate-config:security",
     "github>pplancq/renovate-config:npm",
     "github>pplancq/renovate-config:onboarding",
     "github>pplancq/renovate-config:github-action",
     "github>pplancq/renovate-config:terraform"
   ],
-  "dependencyDashboard": false,
+  "dependencyDashboard": true,
   "labels": ["dependencies"],
-  "prConcurrentLimit": 2,
-  "prHourlyLimit": 2,
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 0,
   "packageRules": [
     {
+      "description": "Patch updates: 5 days quarantine",
+      "matchUpdateTypes": ["patch"],
+      "minimumReleaseAge": "5 days",
+      "addLabels": ["renovate/patch"]
+    },
+    {
+      "description": "Minor updates: 10 days quarantine",
+      "matchUpdateTypes": ["minor"],
+      "minimumReleaseAge": "10 days",
+      "addLabels": ["renovate/minor"]
+    },
+    {
+      "description": "Major updates: 25 days quarantine, only 1 open PR",
       "matchUpdateTypes": ["major"],
-      "addLabels": ["High"]
+      "minimumReleaseAge": "25 days",
+      "prConcurrentLimit": 1,
+      "addLabels": ["renovate/major", "breaking-change"]
     }
-  ]
+  ],
+  "schedule": ["before 8am on monday"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 7am on the first day of the month"],
+    "labels": ["renovate/lockfile", "dependencies"]
+  }
 }
