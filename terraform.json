@@ -9,15 +9,18 @@
   "packageRules": [
     {
       "matchManagers": ["terraform"],
-      "groupName": "Terraform providers"
+      "groupName": "Terraform providers",
+      "addLabels": ["tech/devops"]
     },
     {
       "matchManagers": ["terraform-version"],
-      "groupName": "Terraform version"
+      "groupName": "Terraform version",
+      "addLabels": ["tech/devops"]
     },
     {
       "matchManagers": ["pre-commit"],
-      "groupName": "pre-commit hooks"
+      "groupName": "pre-commit hooks",
+      "addLabels": ["tech/devops"]
     }
   ]
 }

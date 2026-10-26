@@ -1,19 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "npm": {
-    "rangeStrategy": "bump",
-    "minimumReleaseAge": "3 days"
+    "rangeStrategy": "bump"
   },
   "packageRules": [
     {
       "matchPackageNames": ["node"],
       "matchDepTypes": ["engines"],
       "enabled": false
-    },
-    {
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["npm"],
-      "minimumReleaseAge": "3 days"
     },
     {
       "matchDatasources": ["npm"],
@@ -37,13 +31,39 @@
     },
     {
       "matchDatasources": ["npm"],
-      "groupName": "semantic-release mono repo",
-      "matchPackageNames": ["/^semantic-release$/", "/^@pplancq/semantic-release-config$/"]
+      "groupName": "shelter-ui mono repo",
+      "matchSourceUrls": ["https://github.com/pplancq/shelter-ui"]
     },
     {
       "matchDatasources": ["npm"],
-      "groupName": "shelter-ui mono repo",
-      "matchSourceUrls": ["https://github.com/pplancq/shelter-ui"]
+      "groupName": "React ecosystem",
+      "groupSlug": "react-ecosystem",
+      "matchPackageNames": ["react", "react-dom", "/^@types/react(-dom)?$/"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Nx tooling",
+      "groupSlug": "nx-tooling",
+      "matchPackageNames": ["/^@nx//", "nx", "@pplancq/nx-release-plugin"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "dev-tools config",
+      "groupSlug": "dev-tools-config",
+      "matchPackageNames": ["/^@pplancq/.+-config$/"]
+    },
+    {
+      "matchManagers": ["mise"],
+      "groupName": "Node.js and npm",
+      "groupSlug": "node-npm",
+      "matchPackageNames": ["node", "npm"]
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["packageManager"],
+      "groupName": "Node.js and npm",
+      "groupSlug": "node-npm",
+      "matchPackageNames": ["npm"]
     }
   ]
 }

@@ -4,6 +4,10 @@
     {
       "matchDepTypes": ["action"],
       "pinDigests": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["tech/devops"]
     }
   ]
 }

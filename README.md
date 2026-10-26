@@ -9,46 +9,64 @@ This repository contains the Renovate configuration used to manage dependency up
 
 The main configuration is defined in `default.json` and includes:
 
-- **extends**: Uses Renovate's recommended config.
-- **timezone**: Europe/Paris.
-- **labels**: PRs are labeled with "dependencies".
-- **prConcurrentLimit**: Limit of 2 concurrent PRs.
-- **prHourlyLimit**: Limit of 2 PRs per hour.
-- **vulnerabilityAlerts**: enabled and adds the "security" label.
+- **extends**: `config:recommended`, `:timezone(Europe/Paris)` and the `security`, `npm`, `onboarding`, `github-action` and `terraform` presets.
+- **dependencyDashboard**: enabled.
+- **schedule**: `before 8am on monday` (Europe/Paris).
+- **prConcurrentLimit**: 3 concurrent PRs.
+- **prHourlyLimit**: 0 (no hourly limit).
+- **labels**: PRs are labeled "dependencies".
+- **lockFileMaintenance**: enabled for every manager that supports lock files, monthly (`before 7am on the first day of the month`). Labels: `renovate/lockfile`, `dependencies`.
+- **packageRules** (quarantine by update type, via `minimumReleaseAge`):
+  - patch: 5 days, label `renovate/patch`.
+  - minor: 10 days, label `renovate/minor`.
+  - major: 25 days, only 1 open PR at a time (`prConcurrentLimit: 1`), labels `renovate/major` and `breaking-change`.
+- **security**: see [Security config](#security-config).
 - **npm**:
   - versioning strategy "bump".
-  - minimum release age: 3 days.
-- **node**:
-  - no update of engines in package.json.
-  - no update of peerDependencies in package.json.
+  - no update of `engines.node` or `peerDependencies` in package.json.
+  - grouped PRs: Babel, TanStack Query, typescript-eslint, shelter-ui, React ecosystem (`react`, `react-dom`, `@types/react`, `@types/react-dom`), Nx tooling (`@nx/*`, `nx`, `@pplancq/nx-release-plugin`), dev-tools config (`@pplancq/*-config`).
+  - Node.js and npm: versions declared in `mise.toml` and the `packageManager` key of package.json are grouped in a single PR.
 - **terraform**:
   - versioning strategy "bump".
-  - providers and modules are grouped by provider in dedicated PRs.
-  - Terraform core version updates are grouped in a single PR.
-- **packageRules**:
-  - Major updates are labeled "High".
+  - providers and modules are grouped in a "Terraform providers" PR.
+  - Terraform core version updates are grouped in a "Terraform version" PR.
+  - pre-commit hooks are grouped in a "pre-commit hooks" PR.
+  - label `tech/devops`.
+- **github-action**: actions are pinned by digest (`pinDigests: true`), label `tech/devops`.
+- **onboarding**: onboarding PR with the config file `.github/renovate.json`, extending this config.
+- **No auto-merge.**
 
-> **Note:**  
-> The default configuration **does not set any schedule**.  
-> If you want to schedule updates (e.g., only on Monday morning), use the dedicated `schedule` config.
+### Security config
 
-### Using the schedule config
+The `security` preset (included in the default config) handles vulnerability alerts:
 
-To apply a schedule for updates, add the following extension to your configuration:
+- `osvVulnerabilityAlerts: true` (OSV database, complementing GitHub Dependabot alerts).
+- `vulnerabilityAlerts` enabled: Renovate's vulnerability PRs ignore the schedule and the PR limits.
+- Labels `renovate/cve` and `security`, with a 3 days minimum release age.
+
+### Ignoring or delaying a dependency
+
+In your project's `renovate.json`:
+
+```json
+{
+  "extends": ["github>pplancq/renovate-config"],
+  "packageRules": [
+    { "matchPackageNames": ["some-package"], "enabled": false },
+    { "matchPackageNames": ["other-package"], "minimumReleaseAge": "60 days" }
+  ]
+}
+```
+
+### Using the schedule config (legacy)
+
+The default config already applies a schedule, so `schedule` is only kept for projects that still use it. It applies `after 00:00 before 16:00 on monday` (Europe/Paris) and disables the PR limits (`prConcurrentLimit: 0`, `prHourlyLimit: 0`).
 
 ```json
 {
   "extends": ["github>pplancq/renovate-config", "github>pplancq/renovate-config:schedule"]
 }
 ```
-
-The `schedule` config applies the following window: `after 00:00 before 16:00 on monday` (Europe/Paris timezone).
-
-> **Note:**  
-> The `schedule` config does **not** limit the number of PRs:
->
-> - `prConcurrentLimit: 0` (no limit on concurrent PRs)
-> - `prHourlyLimit: 0` (no limit on PRs per hour)
 
 ### Terraform config
 
