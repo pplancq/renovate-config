@@ -34,10 +34,9 @@
       "addLabels": ["renovate/major", "breaking-change"]
     }
   ],
-  "schedule": ["before 8am on monday"],
+  "schedule": ["* 0-7 * * 1"],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 7am on the first day of the month"],
     "labels": ["renovate/lockfile", "dependencies"]
   }
 }

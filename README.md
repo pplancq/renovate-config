@@ -11,11 +11,11 @@ The main configuration is defined in `default.json` and includes:
 
 - **extends**: `config:recommended`, `:timezone(Europe/Paris)` and the `security`, `npm`, `onboarding`, `github-action` and `terraform` presets.
 - **dependencyDashboard**: enabled.
-- **schedule**: `before 8am on monday` (Europe/Paris).
+- **schedule**: `* 0-7 * * 1` (Monday from midnight to 8am, Europe/Paris).
 - **prConcurrentLimit**: 3 concurrent PRs.
 - **prHourlyLimit**: 0 (no hourly limit).
 - **labels**: PRs are labeled "dependencies".
-- **lockFileMaintenance**: enabled for every manager that supports lock files, monthly (`before 7am on the first day of the month`). Labels: `renovate/lockfile`, `dependencies`.
+- **lockFileMaintenance**: enabled for every manager that supports lock files and follows the global schedule. Labels: `renovate/lockfile`, `dependencies`.
 - **packageRules** (quarantine by update type, via `minimumReleaseAge`):
   - patch: 5 days, label `renovate/patch`.
   - minor: 10 days, label `renovate/minor`.
@@ -72,8 +72,8 @@ The linting group intentionally pairs linters and the four shared `@pplancq` con
 The `security` preset (included in the default config) handles vulnerability alerts:
 
 - `osvVulnerabilityAlerts: true` (OSV database, complementing GitHub Dependabot alerts).
-- `vulnerabilityAlerts` enabled: Renovate's vulnerability PRs ignore the schedule and the PR limits.
-- Labels `renovate/cve` and `security`, with a 3 days minimum release age.
+- `vulnerabilityAlerts` enabled: Renovate's vulnerability PRs ignore the schedule and the PR limits, with a 3 days minimum release age.
+- Labels `renovate/cve` and `security`.
 
 ### Ignoring or delaying a dependency
 
