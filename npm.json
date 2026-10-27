@@ -51,16 +51,88 @@
       "groupName": "Linting tools and configs",
       "groupSlug": "linting-tools-configs",
       "matchPackageNames": [
-        "/^@pplancq/.+-config$/",
-        "/^@commitlint//",
-        "/^commitlint(-|$)/",
-        "/^@stylelint//",
-        "/^stylelint(-|$)/",
-        "/^@eslint//",
-        "/^eslint(-|$)/",
-        "/^prettier(-|$)/",
-        "/^@prettier//"
+        "eslint",
+        "stylelint",
+        "prettier",
+        "@commitlint/cli",
+        "@pplancq/eslint-config",
+        "@pplancq/stylelint-config",
+        "@pplancq/prettier-config",
+        "@pplancq/commitlint-config"
       ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Unit testing tools",
+      "groupSlug": "unit-testing-tools",
+      "matchPackageNames": [
+        "/^vitest(-|$)/",
+        "/^@vitest//",
+        "!/^@vitest/eslint(-|$)/",
+        "/^@testing-library//",
+        "jsdom",
+        "sass-true"
+      ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "E2E testing tools",
+      "groupSlug": "e2e-testing-tools",
+      "matchPackageNames": [
+        "playwright",
+        "playwright-core",
+        "/^@playwright//",
+        "@bdellegrazie/playwright-sonar-reporter",
+        "monocart-coverage-reports"
+      ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Mocking tools",
+      "groupSlug": "mocking-tools",
+      "matchPackageNames": ["msw", "/^@msw//", "fake-indexeddb"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Rstack build tooling",
+      "groupSlug": "rstack-build-tooling",
+      "matchPackageNames": ["/^@rsbuild//", "/^@rslib//", "/^rsbuild-plugin-/"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Vite tooling",
+      "groupSlug": "vite-tooling",
+      "matchPackageNames": ["vite", "/^@vitejs//", "/^vite-plugin-/"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Storybook tooling",
+      "groupSlug": "storybook-tooling",
+      "matchPackageNames": [
+        "/^storybook(-|$)/",
+        "/^@storybook//",
+        "eslint-plugin-storybook",
+        "react-docgen-typescript",
+        "remark-gfm"
+      ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Visual testing tools",
+      "groupSlug": "visual-testing-tools",
+      "matchPackageNames": ["chromatic", "@chromatic-com/storybook"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "TypeScript tooling",
+      "groupSlug": "typescript-tooling",
+      "matchPackageNames": ["typescript", "tsc-files"]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "Git hooks tooling",
+      "groupSlug": "git-hooks-tooling",
+      "matchPackageNames": ["husky", "lint-staged"]
     },
     {
       "matchManagers": ["mise"],

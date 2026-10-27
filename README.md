@@ -24,7 +24,7 @@ The main configuration is defined in `default.json` and includes:
 - **npm**:
   - versioning strategy "bump".
   - no update of `engines.node` or `peerDependencies` in package.json.
-  - grouped PRs: Babel, TanStack Query, typescript-eslint, shelter-ui, React ecosystem (`react`, `react-dom`, `@types/react`, `@types/react-dom`), Nx tooling (`@nx/*`, `nx`, `@pplancq/nx-release-plugin`), linting tools and configs (`@pplancq/*-config`, Commitlint, Stylelint, ESLint, and Prettier).
+  - grouped PRs: Babel, TanStack Query, typescript-eslint, shelter-ui, React ecosystem, Nx tooling, and development tooling. See [npm dependency groups](#npm-dependency-groups).
   - Node.js and npm: versions declared in `mise.toml` and the `packageManager` key of package.json are grouped in a single PR.
 - **terraform**:
   - versioning strategy "bump".
@@ -35,6 +35,37 @@ The main configuration is defined in `default.json` and includes:
 - **github-action**: actions are pinned by digest (`pinDigests: true`), label `tech/devops`.
 - **onboarding**: onboarding PR with the config file `.github/renovate.json`, extending this config.
 - **No auto-merge.**
+
+### npm dependency groups
+
+The `npm` preset groups related dependencies into PRs by ecosystem or development responsibility:
+
+| Group                     | Packages                                                                                                                                             |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Babel                     | `@babel/*`                                                                                                                                           |
+| TanStack Query            | Packages sourced from `https://github.com/TanStack/query`                                                                                            |
+| typescript-eslint         | `@typescript-eslint/*`                                                                                                                               |
+| shelter-ui                | Packages sourced from `https://github.com/pplancq/shelter-ui`                                                                                        |
+| React ecosystem           | `react`, `react-dom`, `@types/react`, `@types/react-dom`                                                                                             |
+| Nx tooling                | `nx`, `@nx/*`, `@pplancq/nx-release-plugin`                                                                                                          |
+| Linting tools and configs | `eslint`, `stylelint`, `prettier`, `@commitlint/cli`, and `@pplancq/{eslint,stylelint,prettier,commitlint}-config`                                   |
+| Unit testing tools        | `vitest`, `vitest-*`, `@vitest/*` (except `@vitest/eslint` and `@vitest/eslint-*`), `@testing-library/*`, `jsdom`, `sass-true`                       |
+| E2E testing tools         | `playwright`, `playwright-core`, `@playwright/*`, `@bdellegrazie/playwright-sonar-reporter`, `monocart-coverage-reports`                             |
+| Mocking tools             | `msw`, `@msw/*` (including `@msw/playwright`), `fake-indexeddb`                                                                                      |
+| Rstack build tooling      | `@rsbuild/*`, `@rslib/*`, `rsbuild-plugin-*`                                                                                                         |
+| Vite tooling              | `vite`, `@vitejs/*`, `vite-plugin-*`                                                                                                                 |
+| Storybook tooling         | `storybook`, `storybook-*` (including `storybook-react-rsbuild`), `@storybook/*`, `eslint-plugin-storybook`, `react-docgen-typescript`, `remark-gfm` |
+| Visual testing tools      | `chromatic`, `@chromatic-com/storybook`                                                                                                              |
+| TypeScript tooling        | `typescript`, `tsc-files`                                                                                                                            |
+| Git hooks tooling         | `husky`, `lint-staged`                                                                                                                               |
+
+Groups match package names or sources, not only `devDependencies`: tooling published in a configuration package's `dependencies` is also covered. Updates to `peerDependencies` remain disabled.
+
+The linting group intentionally pairs linters and the four shared `@pplancq` configs without pulling in their plugins, parsers, or third-party configs. For example, `@vitest/eslint-plugin` remains independent, while `eslint-plugin-storybook` belongs to Storybook and Rsbuild lint integrations belong to Rstack. The existing typescript-eslint group remains separate.
+
+`react-docgen-typescript` and `remark-gfm` are grouped with Storybook because these projects use them exclusively for documentation. Chromatic has its own visual testing group.
+
+`@types/node`, `sass-embedded`, `postcss-discard-duplicates`, `concurrently`, and `nodemon` remain independent. React types stay in the React ecosystem group.
 
 ### Security config
 
