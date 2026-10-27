@@ -24,7 +24,7 @@ The main configuration is defined in `default.json` and includes:
 - **npm**:
   - versioning strategy "bump".
   - no update of `engines.node` or `peerDependencies` in package.json.
-  - grouped PRs: Babel, TanStack Query, typescript-eslint, shelter-ui, React ecosystem (`react`, `react-dom`, `@types/react`, `@types/react-dom`), Nx tooling (`@nx/*`, `nx`, `@pplancq/nx-release-plugin`), dev-tools config (`@pplancq/*-config`).
+  - grouped PRs: Babel, TanStack Query, typescript-eslint, shelter-ui, React ecosystem (`react`, `react-dom`, `@types/react`, `@types/react-dom`), Nx tooling (`@nx/*`, `nx`, `@pplancq/nx-release-plugin`), linting tools and configs (`@pplancq/*-config`, Commitlint, Stylelint, ESLint, and Prettier).
   - Node.js and npm: versions declared in `mise.toml` and the `packageManager` key of package.json are grouped in a single PR.
 - **terraform**:
   - versioning strategy "bump".

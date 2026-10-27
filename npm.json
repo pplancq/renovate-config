@@ -48,9 +48,19 @@
     },
     {
       "matchDatasources": ["npm"],
-      "groupName": "dev-tools config",
-      "groupSlug": "dev-tools-config",
-      "matchPackageNames": ["/^@pplancq/.+-config$/"]
+      "groupName": "Linting tools and configs",
+      "groupSlug": "linting-tools-configs",
+      "matchPackageNames": [
+        "/^@pplancq/.+-config$/",
+        "/^@commitlint//",
+        "/^commitlint(-|$)/",
+        "/^@stylelint//",
+        "/^stylelint(-|$)/",
+        "/^@eslint//",
+        "/^eslint(-|$)/",
+        "/^prettier(-|$)/",
+        "/^@prettier//"
+      ]
     },
     {
       "matchManagers": ["mise"],
