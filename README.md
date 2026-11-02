@@ -15,7 +15,6 @@ The main configuration is defined in `default.json` and includes:
 - **prConcurrentLimit**: 3 concurrent PRs.
 - **prHourlyLimit**: 0 (no hourly limit).
 - **labels**: PRs are labeled "dependencies".
-- **lockFileMaintenance**: enabled for every manager that supports lock files and follows the global schedule. Labels: `renovate/lockfile`, `dependencies`.
 - **packageRules** (quarantine by update type, via `minimumReleaseAge`):
   - patch: 5 days, label `renovate/patch`.
   - minor: 10 days, label `renovate/minor`.

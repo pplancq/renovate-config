@@ -34,9 +34,5 @@
       "addLabels": ["renovate/major", "breaking-change"]
     }
   ],
-  "schedule": ["* 0-7 * * 1"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "labels": ["renovate/lockfile", "dependencies"]
-  }
+  "schedule": ["* 0-7 * * 1"]
 }
