@@ -23,7 +23,7 @@ The main configuration is defined in `default.json` and includes:
 - **npm**:
   - versioning strategy "bump".
   - no update of `engines.node` or `peerDependencies` in package.json.
-  - grouped PRs: Babel, TanStack Query, typescript-eslint, shelter-ui, React ecosystem, Nx tooling, and development tooling. See [npm dependency groups](#npm-dependency-groups).
+  - grouped PRs: Babel, TanStack Query, typescript-eslint, @eslint-react, shelter-ui, React ecosystem, Nx tooling, and development tooling. See [npm dependency groups](#npm-dependency-groups).
   - Node.js and npm: versions declared in `mise.toml` and the `packageManager` key of package.json are grouped in a single PR.
 - **terraform**:
   - versioning strategy "bump".
@@ -44,6 +44,7 @@ The `npm` preset groups related dependencies into PRs by ecosystem or developmen
 | Babel                     | `@babel/*`                                                                                                                                           |
 | TanStack Query            | Packages sourced from `https://github.com/TanStack/query`                                                                                            |
 | typescript-eslint         | `@typescript-eslint/*`                                                                                                                               |
+| eslint-react              | Packages sourced from `https://github.com/Rel1cx/eslint-react`                                                                                       |
 | shelter-ui                | Packages sourced from `https://github.com/pplancq/shelter-ui`                                                                                        |
 | React ecosystem           | `react`, `react-dom`, `@types/react`, `@types/react-dom`                                                                                             |
 | Nx tooling                | `nx`, `@nx/*`, `@pplancq/nx-release-plugin`                                                                                                          |

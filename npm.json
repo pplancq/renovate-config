@@ -31,6 +31,11 @@
     },
     {
       "matchDatasources": ["npm"],
+      "groupName": "@eslint-react mono repo",
+      "matchSourceUrls": ["https://github.com/Rel1cx/eslint-react"]
+    },
+    {
+      "matchDatasources": ["npm"],
       "groupName": "shelter-ui mono repo",
       "matchSourceUrls": ["https://github.com/pplancq/shelter-ui"]
     },
